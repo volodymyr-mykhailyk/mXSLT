@@ -7,8 +7,9 @@ import net.sf.saxon.s9api.*;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
-import javax.xml.parsers.*;
 import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.stream.StreamSource;
 import java.io.File;
 import java.io.IOException;
@@ -44,7 +45,7 @@ public class XSLTDebugger {
         String xsl = "C:\\projects\\other\\mSaxon\\xsl\\xMark\\xMark.xsl";
 
         for (int i = 0; i < Constants.REPEAT_COUNT; i++) {
-            System.out.println("Iteration: "+i);
+            System.out.println("Iteration: " + i);
             PerformanceAnalyzer.isEnabled = true;
             PerformanceAnalyzer analyzer = new PerformanceAnalyzer("XSLTDebugger");
             analyzer.start();

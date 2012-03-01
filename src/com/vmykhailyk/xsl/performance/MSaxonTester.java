@@ -9,7 +9,7 @@ import com.vmykhailyk.xsl.exceptions.MException;
  * Date: 25.11.11
  * Time: 15:34
  */
-public class MSaxonTester implements RunnableComponent{
+public class MSaxonTester implements RunnableComponent {
     private int threadsCount;
 
     public MSaxonTester(int threads) {

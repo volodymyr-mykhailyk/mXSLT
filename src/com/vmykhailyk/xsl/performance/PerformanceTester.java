@@ -6,7 +6,10 @@ import org.apache.log4j.*;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Set;
 
 /**
  * Created by Volodymyr.Mykhailyk
@@ -86,7 +89,7 @@ public class PerformanceTester {
         builder.append("\nComponent\t");
         for (String file : files) {
             long space = new File(file).length();
-            builder.append(String.format("%.3f", (double)space/1024/1024));
+            builder.append(String.format("%.3f", (double) space / 1024 / 1024));
             builder.append("\t");
         }
         builder.append("\n");

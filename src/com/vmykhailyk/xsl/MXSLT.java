@@ -1,10 +1,10 @@
 package com.vmykhailyk.xsl;
 
-import com.vmykhailyk.xsl.io.DataMerger;
-import com.vmykhailyk.xsl.modules.PoolableXslFactory;
 import com.vmykhailyk.xsl.data.MConfig;
 import com.vmykhailyk.xsl.exceptions.InitializationException;
 import com.vmykhailyk.xsl.exceptions.ProcessingException;
+import com.vmykhailyk.xsl.io.DataMerger;
+import com.vmykhailyk.xsl.modules.PoolableXslFactory;
 import com.vmykhailyk.xsl.modules.TaskCompiler;
 import com.vmykhailyk.xsl.utils.Constants;
 import org.apache.commons.pool.ObjectPool;
@@ -59,7 +59,6 @@ public class MXSLT {
     }
 
 
-
     public void initialize() throws InitializationException {
         initializeProcessorsPool();
         createProcessorsExecutor();
@@ -88,11 +87,11 @@ public class MXSLT {
     }
 
 
-
     public void teardown() {
         processingExecutor.shutdownNow();
         try {
             processorsPool.close();
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
     }
 }

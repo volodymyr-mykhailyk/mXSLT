@@ -3,13 +3,12 @@ package com.vmykhailyk.xsl;
 import com.vmykhailyk.xsl.data.MConfig;
 import com.vmykhailyk.xsl.exceptions.MException;
 import com.vmykhailyk.xsl.utils.PerformanceAnalyzer;
+import net.sf.saxon.Transform;
 import net.sf.saxon.trans.CommandLineOptions;
 import net.sf.saxon.trans.XPathException;
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-
-import net.sf.saxon.Transform;
 
 /**
  * Created by Volodymyr.Mykhailyk

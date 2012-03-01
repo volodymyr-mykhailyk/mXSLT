@@ -1,7 +1,8 @@
 package com.vmykhailyk.xsl.modules;
 
 import com.vmykhailyk.xsl.exceptions.InitializationException;
-import com.vmykhailyk.xsl.modules.extension.*;
+import com.vmykhailyk.xsl.modules.extension.PerformanceAnalyzerFunction;
+import com.vmykhailyk.xsl.modules.extension.SpawnNewThreadFunction;
 import net.sf.saxon.lib.ExtensionFunctionDefinition;
 
 import java.util.ArrayList;

@@ -41,7 +41,7 @@ public class XSLTTransformerBuilder {
             try {
                 return Configuration.readConfiguration((new StreamSource(configFile)));
             } catch (XPathException e) {
-                logger.error("Cannot read saxon configuration file. Using default: "+e.getMessage());
+                logger.error("Cannot read saxon configuration file. Using default: " + e.getMessage());
             }
         }
         return new Configuration();

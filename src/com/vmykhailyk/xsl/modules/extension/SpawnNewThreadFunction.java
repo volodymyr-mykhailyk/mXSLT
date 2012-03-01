@@ -9,7 +9,8 @@ import net.sf.saxon.om.SequenceIterator;
 import net.sf.saxon.s9api.XdmNode;
 import net.sf.saxon.trans.XPathException;
 import net.sf.saxon.tree.iter.SingletonIterator;
-import net.sf.saxon.value.*;
+import net.sf.saxon.value.SequenceType;
+import net.sf.saxon.value.StringValue;
 
 import java.io.File;
 import java.io.IOException;
@@ -61,15 +62,15 @@ public class SpawnNewThreadFunction extends AbstractXSLTFunction {
         }
 
         private String getPartMarkerId(String name) {
-            return "#mXSLT#"+name+"#mXSLT#";
+            return "#mXSLT#" + name + "#mXSLT#";
         }
 
         private File getFile(String counter) {
             try {
                 return File.createTempFile("mXSLT_", "_documentPart");
             } catch (IOException e) {
-                logger.warn("Cannot create file in temp folder: "+e.getMessage());
-                return new File("output/part" + counter+ ".xml");
+                logger.warn("Cannot create file in temp folder: " + e.getMessage());
+                return new File("output/part" + counter + ".xml");
             }
         }
     }
