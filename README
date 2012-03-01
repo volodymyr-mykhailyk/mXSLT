@@ -1,0 +1,28 @@
+This project is a code base for poster "User-land parallel processing of XSLT" presented on XMLPrague 2012. It include all sources and test examples that was used for the poster.
+
+Solution concepts:
+- works on top of standard XSLT engine
+- doesn't require modification of original transformation
+- tasks for parallel processing created from XSLT code
+- tasks are based on input elements
+- easy to use in Rule-Based stylesheet
+- provide performance improvements with small tasks (less then 1sec)
+- works faster then built-in solution
+
+Solution drawbacks
+- higher memory consumption then built-in solution
+- complex evaluation on transformation top level decrease performance improvements
+- variable content cannot be created in parallel
+- pre-calculated data cannot be passed to new thread
+- context of parallel task can single element only
+
+How to use solution in your environment:
+1. Unpack mXSLT-VERSION.zip to some folder
+2. List all libraries from lib folder in classpath
+3. List mXSLT-VERSION.jar in classpath from dist folder
+4. Run java com.vmykhailyk.xsl.MXSLTRunner -s:PATH_TO_SOURCE -o:PATH_TO_OUTPUT -xsl:PATH_TO_XSL
+5. You can specify standard Saxon configuration file with -config: option. It will be used to configure Saxon Processor
+
+Example command line:
+java -cp mXSLT-0.8.0.541.jar;lib/saxon9he.jar;lib/log4j.jar;lib/resolver.jar;lib/commons-pool-1.5.5.jar
+com.vmykhailyk.xsl.MXSLTRunner -s:input/xMark/out01.xml -o:output/out.xml -xsl:xsl/xMark/mXSLT.xsl
