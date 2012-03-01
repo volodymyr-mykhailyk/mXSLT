@@ -19,18 +19,18 @@ import java.util.concurrent.*;
  * Date: 24.11.11
  * Time: 12:23
  */
-public class MSaxon {
+public class MXSLT {
     private MConfig config;
     private PoolableXslFactory factory;
     private ObjectPool processorsPool;
     private ThreadPoolExecutor processingExecutor;
     private TaskCompiler compiler;
 
-    private static final Logger logger = Logger.getLogger(MSaxon.class);
+    private static final Logger logger = Logger.getLogger(MXSLT.class);
     private LinkedBlockingQueue<Future> resultsQueue;
 
 
-    public MSaxon(MConfig theConfig) {
+    public MXSLT(MConfig theConfig) {
         config = theConfig;
         compiler = new TaskCompiler();
         factory = new PoolableXslFactory(config, compiler);

@@ -1,6 +1,6 @@
 package com.vmykhailyk.xsl.performance;
 
-import com.vmykhailyk.xsl.MSaxon;
+import com.vmykhailyk.xsl.MXSLT;
 import com.vmykhailyk.xsl.data.MConfig;
 import com.vmykhailyk.xsl.exceptions.MException;
 
@@ -21,10 +21,10 @@ public class MSaxonTester implements RunnableComponent{
         try {
             MConfig config = MConfig.create(input, output, xsl);
             config.setThreadsCount(threadsCount);
-            MSaxon mSaxon = new MSaxon(config);
-            mSaxon.initialize();
-            mSaxon.execute();
-            mSaxon.teardown();
+            MXSLT mXSLT = new MXSLT(config);
+            mXSLT.initialize();
+            mXSLT.execute();
+            mXSLT.teardown();
         } catch (MException e) {
             e.printStackTrace();
         }

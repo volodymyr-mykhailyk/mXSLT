@@ -16,7 +16,7 @@ import net.sf.saxon.Transform;
  * Date: 24.11.11
  * Time: 12:23
  */
-public class MSaxonRunner {
+public class MXSLTRunner {
     public static void main(String[] args) {
         Logger logger = Logger.getRootLogger();
         logger.setLevel(Level.INFO);
@@ -31,10 +31,10 @@ public class MSaxonRunner {
 
             MConfig config = MConfig.create(options);
             printInputOptions(config, logger);
-            MSaxon mSaxon = new MSaxon(config);
-            mSaxon.initialize();
-            mSaxon.execute();
-            mSaxon.teardown();
+            MXSLT mXSLT = new MXSLT(config);
+            mXSLT.initialize();
+            mXSLT.execute();
+            mXSLT.teardown();
         } catch (MException e) {
             e.printStackTrace();
         } catch (XPathException e) {
