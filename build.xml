@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="mXSLT-project build file" default="build" basedir=".">
+
+    <property name="in.dir" value="${basedir}/input"/>
+
+    <property name="build.dir" value="output"/>
+    <property name="dist.dir" value="dist"/>
+
+    <property name="src.dir" value="src"/>
+    <property name="lib.dir" value="lib"/>
+    <property name="xsl.dir" value="xsl"/>
+
+    <property name="classes.build.dir" value="${build.dir}/classes"/>
+
+    <property name="project.version" value="0.8.0"/>
+    <buildnumber file="build.number"/>
+    <property name="full.version" value="${project.version}.${build.number}"/>
+    <property name="dist.name" value="mXSLT-${full.version}"/>
+
+    <fileset dir="${basedir}" id="libraries.fileset">
+        <include name="${lib.dir}/commons-pool-1.5.5.jar"/>
+        <include name="${lib.dir}/log4j.jar"/>
+        <include name="${lib.dir}/resolver.jar"/>
+        <include name="${lib.dir}/saxon9he.jar"/>
+    </fileset>
+
+    <path id="build.classpath">
+        <fileset refid="libraries.fileset"/>
+    </path>
+
+    <target name="build" depends="setup, compile, test, pack"/>
+
+    <target name="setup">
+        <delete dir="${build.dir}" failonerror="false"/>
+
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${classes.build.dir}"/>
+    </target>
+
+    <target name="compile">
+        <javac destdir="${classes.build.dir}"
+               srcdir="${src.dir}"
+               encoding="UTF-8"
+               source="1.6"
+               target="1.6"
+               classpathref="build.classpath">
+        </javac>
+
+        <jar jarfile="${build.dir}/${dist.name}.jar">
+            <fileset dir="${classes.build.dir}"/>
+            <manifest>
+                <attribute name="Implementation-Title" value="mXSLT"/>
+                <attribute name="Implementation-Vendor" value="volodymyr.mykhailyk"/>
+                <attribute name="Implementation-Version" value='${full.version}'/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="test">
+        <!--TBD-->
+    </target>
+
+    <target name="pack">
+        <zip destfile="${dist.dir}/${dist.name}.zip">
+            <fileset dir="${basedir}">
+                <include name="lib/**"/>
+            </fileset>
+            <fileset dir="${build.dir}">
+                <include name="${dist.name}.jar"/>
+            </fileset>
+        </zip>
+    </target>
+
+</project>
