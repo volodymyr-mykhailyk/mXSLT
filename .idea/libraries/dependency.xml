@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="dependency">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/commons-pool-1.5.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/resolver.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/log4j.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xercesImpl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/saxon9he.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
