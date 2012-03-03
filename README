@@ -26,3 +26,6 @@ How to use solution in your environment:
 Example command line:
 java -cp mXSLT-0.8.0.541.jar;lib/saxon9he.jar;lib/log4j.jar;lib/resolver.jar;lib/commons-pool-1.5.5.jar
 com.vmykhailyk.xsl.MXSLTRunner -s:input/xMark/out01.xml -o:output/out.xml -xsl:xsl/xMark/mXSLT.xsl
+
+Threads spawning from xsl code:
+More info hot to trigger multiple threads is coming. At the moment you could find some hints in xsl/xMark/mXSLT.xsl file
