@@ -29,3 +29,7 @@ com.vmykhailyk.xsl.MXSLTRunner -s:input/xMark/out01.xml -o:output/out.xml -xsl:x
 
 Threads spawning from xsl code:
 More info hot to trigger multiple threads is coming. At the moment you could find some hints in xsl/xMark/mXSLT.xsl file
+
+Maximum threads count:
+At the moment code allocate number threads accordinly to the availabale CPU returned from java Runtime.availableProcessors() method. 
+It is possible to make this parameter configurable from command line.
